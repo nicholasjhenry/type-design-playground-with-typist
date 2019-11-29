@@ -7,6 +7,7 @@ defmodule TypeDesignPlaygroundWithTypist.MixProject do
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
+      consolidate_protocols: Mix.env() != :test,
       deps: deps()
     ]
   end
@@ -24,6 +25,8 @@ defmodule TypeDesignPlaygroundWithTypist.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
       {:faker, "~> 0.13"},
+      # in development
+      # {:typist, path: "../../civilcode/typist"},
       {:typist, github: "civilcode/typist"},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
     ]
