@@ -58,12 +58,10 @@ defmodule MakingIllegalStatesUnrepresentableTest do
     #     ContactInfo: ContactInfo;
     #     }
 
-    deftype ContactInfo do
-      EmailOnly ::
-        EmailContactInfo.t()
-        | PostOnly ::
-        PostalContactInfo.t()
-        | EmailAndPost :: {EmailContactInfo.t(), PostalContactInfo.t()}
+    defunion ContactInfo do
+      EmailOnly :: EmailContactInfo.t()
+      PostOnly :: PostalContactInfo.t()
+      EmailAndPost :: {EmailContactInfo.t(), PostalContactInfo.t()}
     end
 
     deftype Contact do
